@@ -1,8 +1,8 @@
-# _{Application Name}_
+# _Chef Epicodi's Pizza Parlor_
 
 #### By _**Matt C.**_
 
-#### _{Brief description of application}_
+#### _Mock website to add/remove pizzas from an order_
 
 ## Technologies Used
 
@@ -15,17 +15,18 @@
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+_Uses objects to store pizzas you create and add to your order, which you can then view or remove from the order._
 
 ## Setup/Installation Requirements
 
 * _Clone this repository to your local device_
 * _Run index.html in your browser_
 * _Enjoy the lovely CSS_
+* _Or experience the site live on github pages right [here](https://catperso.github.io/pizza-parlor)!_
 
 ## Known Bugs
 
-* _None so far_
+* _Cannot actually order the pizzas yet._
 
 ## License - [MIT](https://opensource.org/licenses/MIT)
 
@@ -38,10 +39,6 @@ Copyright (c) _2021_ _Matt C._
 ---
 
 ### Describe: _Pizza()_
-
-**Test:** 
-* Code: _ _
-* _Expected Output:_ 
 
 **Test:** "It should return a Pizza object with four properties for Toppings, Size, Sauce, and Crust."
 * Code: _const myPizza = new Pizza(["canadian bacon", "pineapple", "pepperoncini"], "medium", "garlic parmesan", "stuffed");_
