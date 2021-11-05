@@ -1,3 +1,16 @@
 #my-output {
   display: none;
 }
+
+body {
+  background-image: url(../img/pizzapizza.jpg);
+}
+
+form {
+  background-color: bisque;
+  padding: 10px;
+}
+
+.output-zone {
+  background-color: bisque;
+}
