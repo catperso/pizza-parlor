@@ -1,11 +1,13 @@
 function PizzaOrder() {
   this.pizzas = {};
   this.currentId = 0;
+  this.totalPrice = 0;
 }
 
 PizzaOrder.prototype.addPizza = function(pizza) {
   pizza.id = this.assignId();
   this.pizzas[pizza.id] = pizza;
+  this.totalPrice += pizza.price;
 };
 
 PizzaOrder.prototype.assignId = function() {
@@ -24,6 +26,7 @@ PizzaOrder.prototype.removePizza = function(id) {
   if (this.pizzas[id] === undefined) {
     return false;
   }
+  this.totalPrice -= this.pizzas[id].price;
   delete this.pizzas[id];
   return true;
 };
@@ -76,12 +79,34 @@ function displayMyPizzas(orderToDisplay) {
   let htmlForPizzaInfo = "";
   Object.keys(orderToDisplay.pizzas).forEach(function(key) {
     const pizza = orderToDisplay.findPizza(key);
-    htmlForPizzaInfo += "<li id=" + pizza.id + ">My " + pizza.size + " " + pizza.crust + " pizza!</li>";
+    htmlForPizzaInfo += "<li id=" + pizza.id + ">My " + pizza.size + " " + pizza.crust + " pizza with " + pizza.toppings.length + " toppings!</li>";
   });
   pizzaList.html(htmlForPizzaInfo);
+  $("#total-price").text(orderToDisplay.totalPrice);
+}
+
+function showPizza(pizzaId) {
+  const myPizza = myOrder.findPizza(pizzaId);
+  $("#my-toppings").empty();
+  $("#my-output").slideDown();
+
+  $("#my-size").text(myPizza.size);
+  $("#my-crust").text(myPizza.crust);
+  $("#my-sauce").text(myPizza.sauce);
+  myPizza.toppings.forEach(function(topping) {
+    $("#my-toppings").append("<li>" + topping + "</li>");
+  });
+  $("#my-price").text(myPizza.price.toFixed(2));
+}
+
+function attachPizzaListeners() {
+  $("ul#my-pizzas").on("click", "li", function () {
+    showPizza(this.id);
+  });
 }
 
 $(document).ready(function() {
+  attachPizzaListeners();
   $("form#new-pizza").submit(function(event) {
     event.preventDefault();
 
@@ -98,16 +123,5 @@ $(document).ready(function() {
 
     myOrder.addPizza(myPizza);
     displayMyPizzas(myOrder);
-    
-    $("#my-toppings").empty();
-    $("#my-output").slideDown();
-
-    $("#my-size").text(myPizza.size);
-    $("#my-crust").text(myPizza.crust);
-    $("#my-sauce").text(myPizza.sauce);
-    myPizza.toppings.forEach(function(topping) {
-      $("#my-toppings").append("<li>" + topping + "</li>");
-    });
-    $("#my-price").text(myPizza.price.toFixed(2));
   });
 });
