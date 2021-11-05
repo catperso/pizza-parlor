@@ -51,6 +51,6 @@ Copyright (c) _2021_ _Matt C._
 
 ### Describe: _Pizza.prototype.pricing()_
 
-**Test:** "It should return a price number calculated from the properties of the pizza it's called on"
+**Test:** "It should set a price property for the pizza its called on based on the other properties"
 * Code: _myPizza.pricing();_
-* _Expected Output:_ 12.5
+* _Expected Output:_ Pizza { toppings: ["canadian bacon", "pineapple", "pepperoncini"], size: "medium", sauce: "garlic parmesan", crust: "stuffed", price: 12.75}
