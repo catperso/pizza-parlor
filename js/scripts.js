@@ -1,3 +1,33 @@
+function PizzaOrder() {
+  this.pizzas = {};
+  this.currentId = 0;
+}
+
+PizzaOrder.prototype.addPizza = function(pizza) {
+  pizza.id = this.assignId();
+  this.pizzas[pizza.id] = pizza;
+};
+
+PizzaOrder.prototype.assignId = function() {
+  this.currentId += 1;
+  return this.currentId;
+};
+
+PizzaOrder.prototype.findPizza = function(id) {
+  if (this.pizzas[id] != undefined) {
+    return this.pizzas[id];
+  }
+  return false;
+};
+
+PizzaOrder.prototype.removePizza = function(id) {
+  if (this.pizzas[id] === undefined) {
+    return false;
+  }
+  delete this.pizzas[id];
+  return true;
+};
+
 function Pizza(toppings, size, sauce, crust) {
   this.toppings = toppings;
   this.size = size;
