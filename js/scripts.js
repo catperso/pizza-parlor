@@ -130,5 +130,11 @@ $(document).ready(function() {
 
     myOrder.addPizza(myPizza);
     displayMyPizzas(myOrder);
+
+    $("#pizza-size").val("Small");
+    $("#pizza-crust").val("Regular");
+    let presetSauce = "Robust Marinara";
+    $("[name=pizza-sauce").filter("[value='" + presetSauce + "']").prop("checked", true);
+    $("[name='pizza-toppings']").prop("checked", false);
   });
 });
