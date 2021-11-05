@@ -7,7 +7,6 @@ function Pizza(toppings, size, sauce, crust) {
 
 Pizza.prototype.pricing = function() {
   let price = 0;
-
   switch (this.size) {
     case ("small"):
       price = 8;
@@ -22,9 +21,6 @@ Pizza.prototype.pricing = function() {
       price = 13;
       break;
   }
-
-  price += .75 * this.toppings.length;
-
   switch (this.crust) {
     case ("stuffed"):
       price += 1;
@@ -35,7 +31,10 @@ Pizza.prototype.pricing = function() {
     case ("pan"):
       price += 1.5;
       break;
+    case ("calzone"):
+      price += 2;
+      break;
   }
-  
+  price += .75 * this.toppings.length;
   this.price = price;
 };
