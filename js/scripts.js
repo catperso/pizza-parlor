@@ -89,7 +89,6 @@ function showPizza(pizzaId) {
   const myPizza = myOrder.findPizza(pizzaId);
   $("#my-toppings").empty();
   $("#my-output").slideDown();
-
   $("#my-size").text(myPizza.size);
   $("#my-crust").text(myPizza.crust);
   $("#my-sauce").text(myPizza.sauce);
@@ -97,11 +96,19 @@ function showPizza(pizzaId) {
     $("#my-toppings").append("<li>" + topping + "</li>");
   });
   $("#my-price").text(myPizza.price.toFixed(2));
+  let buttons = $("#buttons");
+  buttons.empty();
+  buttons.append("<button class='deleteButton btn btn-danger' id=" + myPizza.id + ">Remove from order</button>");
 }
 
 function attachPizzaListeners() {
   $("ul#my-pizzas").on("click", "li", function () {
     showPizza(this.id);
+  });
+  $("#buttons").on("click", ".deleteButton", function() {
+    myOrder.removePizza(this.id);
+    $("#my-output").hide();
+    displayMyPizzas(myOrder);
   });
 }
 

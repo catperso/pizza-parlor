@@ -71,6 +71,10 @@ Copyright (c) _2021_ _Matt C._
 * Code: _myOrder.addPizza(myPizza);_
 * _Expected Output:_ PizzaOrder { Pizzas: {1: myPizza}, currentId: 1 }
 
+**Test:** "It should add the price of the pizza to the total price of the order."
+* Code: _myOrder.addPizza(myPizza);_
+* _Expected Output:_ PizzaOrder { Pizzas: {1: myPizza}, currentId: 1, totalPrice: 12.75 }
+
 ---
 
 ### Describe: _PizzaOrder.prototype.assignId()_
@@ -92,5 +96,9 @@ Copyright (c) _2021_ _Matt C._
 ### Describe: _PizzaOrder.prototype.removePizza(id)_
 
 **Test:** "It should take an ID number, remove any pizza matching that ID from the order, and return true if it does."
-* Code: _myOrder.removePizza(1)_
+* Code: _myOrder.removePizza(1);_
 * _Expected Output:_ true
+
+**Test:** "It should remove the price of the removed pizza from the total price of the order."
+* Code: _myOrder.removePizza(1);_
+* _Expected Output:_ PizzaOrder { Pizzas: {}, currentId: 1, totalPrice: 0 }
