@@ -43,3 +43,7 @@ form {
 .pizza-card {
   background-color: rgba(95, 158, 160, 0.466);
 }
+
+.fancy {
+  font-style: italic;
+}

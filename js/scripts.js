@@ -53,6 +53,9 @@ Pizza.prototype.pricing = function() {
     case ("Extra Large"):
       price = 13;
       break;
+    case ("Skoolie-Sized"):
+      price = 45;
+      break;
   }
   switch (this.crust) {
     case ("Stuffed"):
@@ -66,6 +69,21 @@ Pizza.prototype.pricing = function() {
       break;
     case ("Calzone"):
       price += 2;
+      break;
+    case ("Deep Dish"):
+      price += 3;
+      break;
+    case ("Deeper Dish"):
+      price += 9;
+      break;
+    case ("Deepest Dish"):
+      price += 30;
+      break;
+    case ("Cookie"):
+      price += 1;
+      break;
+    case ("Jerky"):
+      price += 1;
       break;
   }
   price += .75 * this.toppings.length;
@@ -82,7 +100,7 @@ function displayMyPizzas(orderToDisplay) {
     htmlForPizzaInfo += "<li id=" + pizza.id + ">My " + pizza.size + " " + pizza.crust + " pizza with " + pizza.toppings.length + " toppings!</li>";
   });
   pizzaList.html(htmlForPizzaInfo);
-  $("#total-price").text(orderToDisplay.totalPrice);
+  $("#total-price").text(orderToDisplay.totalPrice.toFixed(2));
 }
 
 function showPizza(pizzaId) {
@@ -93,7 +111,7 @@ function showPizza(pizzaId) {
   $("#my-crust").text(myPizza.crust);
   $("#my-sauce").text(myPizza.sauce);
   myPizza.toppings.forEach(function(topping) {
-    $("#my-toppings").append("<li>" + topping + "</li>");
+    $("#my-toppings").append("<li class='fancy'>" + topping + "</li>");
   });
   $("#my-price").text(myPizza.price.toFixed(2));
   let buttons = $("#buttons");

@@ -28,6 +28,8 @@
               <option value="Medium">Medium - 12"</option>
               <option value="Large">Large - 14"</option>
               <option value="Extra Large">Extra Large - 18"</option>
+              <option value="Skoolie-Sized">School Bus - 7.5' x 45'</option>
+              <option value="Football Field">Football Field - 160' x 360'</option>
             </select>
           </div>
           <div class="form-group">
@@ -38,6 +40,11 @@
               <option value="Thin">Thin Crust - Crunchy thin and crispy</option>
               <option value="Pan">Pan - Toppings all the way to the edge</option>
               <option value="Calzone">Calzone - Folded over into a portable pie!</option>
+              <option value="Deep Dish">Deep Dish - Not really a pizza any more, 2" of lasagna sans-noodles!</option>
+              <option value="Deeper Dish">Deeper Dish - Baked with patented oven technology, 8" of cheese soup for your pet to wade in!</option>
+              <option value="Deepest Dish">Deepest Dish - If you'd like to bathe in pizza, this 3'6" deep cheese-pit is for you!</option>
+              <option value="Cookie">Cookie - A savory pizza feast calls for a sweet pizza dessert, don't you agree?</option>
+              <option value="Jerky">Jerky - For all you meat-lovers out there</option>
             </select>
           </div>
           <div class="form-group sauces">
@@ -61,6 +68,34 @@
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="pizza-sauce" id="barbecue" value="Bold Barbecue">
               <label class="form-check-label" for="barbecue">Bold Barbecue</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="pizza-sauce" id="thousand-island" value="Thousand Island">
+              <label class="form-check-label" for="thousand-island">Thousand Island</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="pizza-sauce" id="chili" value="Thai Chili">
+              <label class="form-check-label" for="chili">Thai Chili</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="pizza-sauce" id="gravy" value="Mushroom Gravy">
+              <label class="form-check-label" for="gravy">Mushroom Gravy</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="pizza-sauce" id="alfredo" value="Alfredo White">
+              <label class="form-check-label" for="alfredo">Alfredo White</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="pizza-sauce" id="pbutter" value="Creamy Peanut-Butter">
+              <label class="form-check-label" for="pbutter">Creamy Peanut-Butter</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="pizza-sauce" id="nutella" value="Sweet Nutella">
+              <label class="form-check-label" for="nutella">Sweet Nutella</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="pizza-sauce" id="marshmallow" value="Marshmallow Creme">
+              <label class="form-check-label" for="marshmallow">Marshmallow Creme</label>
             </div>
           </div>
           <div class="form-group toppings">
@@ -120,9 +155,22 @@
                   <input class="form-check-input" type="checkbox" name="pizza-toppings" id="chicken" value="Grilled Chicken">
                   <label class="form-check-label" for="chicken">Grilled Chicken</label>
                 </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="pizza-toppings" id="salmon" value="Cured Salmon">
+                  <label class="form-check-label" for="salmon">Cured Salmon</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="pizza-toppings" id="kangaroo" value="Kangaroo">
+                  <label class="form-check-label" for="kangaroo">Kangaroo</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="pizza-toppings" id="boar" value="Wild Boar">
+                  <label class="form-check-label" for="boar">Wild Boar</label>
+                </div>
+
               </div>
               <div class="col-6">
-                <h4>Non-Meats</h4>
+                <h4 class="fancy">Non-Meats</h4>
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" name="pizza-toppings" id="mushrooms" value="Mushrooms">
                   <label class="form-check-label" for="mushrooms">Mushrooms</label>
@@ -155,6 +203,42 @@
                   <input class="form-check-input" type="checkbox" name="pizza-toppings" id="xtra-chz" value="Extra Cheese">
                   <label class="form-check-label" for="xtra-chz">Extra Cheese!</label>
                 </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="pizza-toppings" id="onions" value="Onions">
+                  <label class="form-check-label" for="onions">Onions</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="pizza-toppings" id="pears" value="Sliced Pears">
+                  <label class="form-check-label" for="pears">Sliced Pears</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="pizza-toppings" id="magic-mushrooms" value="&Prime;Mushrooms&Prime;">
+                  <label class="form-check-label" for="magic-mushrooms">"Mushrooms"</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="pizza-toppings" id="banana" value="Banana Slices">
+                  <label class="form-check-label" for="banana">Banana Slices</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="pizza-toppings" id="mochi" value="Mochi Bits">
+                  <label class="form-check-label" for="mochi">Mochi Bits</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="pizza-toppings" id="froot-loops" value="Fruit Loops">
+                  <label class="form-check-label" for="froot loops">Fruit Loops</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="pizza-toppings" id="cacao" value="Cacao Nibs">
+                  <label class="form-check-label" for="cacao">Cacao Nibs</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="pizza-toppings" id="charms" value="Marshmallow Charms">
+                  <label class="form-check-label" for="charms">Marshmallow Charms (lucky!)</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="pizza-toppings" id="cronch" value="Crunchberries">
+                  <label class="form-check-label" for="cronch">Crunchberries</label>
+                </div>
 
               </div>
             </div>
@@ -168,8 +252,8 @@
         <div class="card" id="my-output">
           <div class="card-body pizza-card">
             <h5 class="card-title">My <span id="my-size"></span> Pizza!</h5>
-            <p class="card-text">Style: <span id="my-crust"></span></p>
-            <p class="card-text">Sauce: <span id="my-sauce"></span></p>
+            <p class="card-text">Style: <span id="my-crust" class="fancy"></span></p>
+            <p class="card-text">Sauce: <span id="my-sauce" class="fancy"></span></p>
             <p class="card-text">My Toppings:</p>
             <ul id="my-toppings"></ul>
             <h4 class="card-text">Price - $<span id="my-price"></span></h4>
