@@ -8,18 +8,21 @@
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src="js/jquery-3.6.0.js"></script>
   <script src="js/scripts.js"></script>
-  <title>Pizza Time Pizza Parlour</title>
+  <title>Epicodi's Glorious Pie-Hole Pie Hole!</title>
 </head>
 <body>
   <div class="container">
     <div class="jumbotron">
+      <img src="img/chef epicodi.jpg" alt="A picture of Chef Epicodi" id="chef-epicodi">
       <h1>Git Pizza For Yer Pie-hole!</h1>
+      <h4>Chef Epicodi is ready to make the most delicious pizza pies you've ever dreamed of, and even those you haven't! What are you waiting for?!?</h4>
+      <hr>
     </div>
     <div class="row">
       <div class="col-6">
         <form id="new-pizza">
           <div class="form-group">
-            <label for="pizza-size">What size pie for your hole?</label>
+            <label for="pizza-size" class="bold-label">What size pie for your hole?</label>
             <select class="form-control" id="pizza-size">
               <option value="Small">Small - 10"</option>
               <option value="Medium">Medium - 12"</option>
@@ -28,7 +31,7 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="pizza-crust">What kind of pie would you die (for)?</label>
+            <label for="pizza-crust" class="bold-label">What kind of pie would you die (for)?</label>
             <select class="form-control" id="pizza-crust">
               <option value="Regular">Regular - Our time-honored traditional crust</option>
               <option value="Stuffed">Stuffed Crust - Traditional crust stuffed full of goodness</option>
@@ -38,7 +41,7 @@
             </select>
           </div>
           <div class="form-group sauces">
-            <label for="pizza-sauce">How saucy are we getting tonight?</label><br>
+            <label for="pizza-sauce" class="bold-label">How saucy are we getting tonight?</label><br>
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="pizza-sauce" id="marinara" value="Robust Marinara" checked>
               <label class="form-check-label" for="marinara">Robust Marinara</label>
@@ -163,7 +166,7 @@
         <h2>Your Pizza Order:</h2>
         <ul id="my-pizzas"></ul>
         <div class="card" id="my-output">
-          <div class="card-body">
+          <div class="card-body pizza-card">
             <h5 class="card-title">My <span id="my-size"></span> Pizza!</h5>
             <p class="card-text">Style: <span id="my-crust"></span></p>
             <p class="card-text">Sauce: <span id="my-sauce"></span></p>

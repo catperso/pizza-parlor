@@ -13,4 +13,33 @@ form {
 
 .output-zone {
   background-color: bisque;
+  padding: 10px;
+}
+
+.bold-label {
+  font-weight: bolder;
+}
+
+#chef-epicodi {
+  float: right;
+  margin: 5px;
+}
+
+.jumbotron {
+  background-color: rgb(255, 180, 180);
+  text-align: center;
+}
+
+.jumbotron h4 {
+  font-family: serif;
+  font-style: italic;
+}
+
+.jumbotron h1 {
+  font-weight: bolder;
+  font-size: 50px;
+}
+
+.pizza-card {
+  background-color: rgba(95, 158, 160, 0.466);
 }
