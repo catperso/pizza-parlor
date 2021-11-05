@@ -51,9 +51,18 @@ $(document).ready(function() {
       myToppings.push($(this).val());
     });
 
-    console.log("pizza size = " + mySize);
-    console.log("pizza style = " + myStyle);
-    console.log("pizza sauce = " + mySauce);
-    console.log("pizza toppings = " + myToppings);
+    let myPizza = new Pizza(myToppings, mySize, mySauce, myStyle);
+    myPizza.pricing();
+    
+    $("#my-toppings").empty();
+    $("#my-output").slideDown();
+
+    $("#my-size").text(myPizza.size);
+    $("#my-crust").text(myPizza.crust);
+    $("#my-sauce").text(myPizza.sauce);
+    myPizza.toppings.forEach(function(topping) {
+      $("#my-toppings").append("<li>" + topping + "</li>");
+    });
+    $("#my-price").text(myPizza.price.toFixed(2));
   });
 });
