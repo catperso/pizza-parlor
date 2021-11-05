@@ -8,33 +8,52 @@ function Pizza(toppings, size, sauce, crust) {
 Pizza.prototype.pricing = function() {
   let price = 0;
   switch (this.size) {
-    case ("small"):
+    case ("Small"):
       price = 8;
       break;
-    case ("medium"):
+    case ("Medium"):
       price = 9.5;
       break;
-    case ("large"):
+    case ("Large"):
       price = 11;
       break;
-    case ("x-lrg"):
+    case ("Extra Large"):
       price = 13;
       break;
   }
   switch (this.crust) {
-    case ("stuffed"):
+    case ("Stuffed"):
       price += 1;
       break;
-    case ("thin"):
+    case ("Thin"):
       price += .5;
       break;
-    case ("pan"):
+    case ("Pan"):
       price += 1.5;
       break;
-    case ("calzone"):
+    case ("Calzone"):
       price += 2;
       break;
   }
   price += .75 * this.toppings.length;
   this.price = price;
 };
+
+$(document).ready(function() {
+  $("form#new-pizza").submit(function(event) {
+    event.preventDefault();
+
+    const mySize = $("#pizza-size").val();
+    const myStyle = $("#pizza-crust").val();
+    const mySauce = $('.sauces input[name="pizza-sauce"]:checked').val();
+    const myToppings = [];
+    $('.toppings input[name="pizza-toppings"]:checked').each(function() {
+      myToppings.push($(this).val());
+    });
+
+    console.log("pizza size = " + mySize);
+    console.log("pizza style = " + myStyle);
+    console.log("pizza sauce = " + mySauce);
+    console.log("pizza toppings = " + myToppings);
+  });
+});
