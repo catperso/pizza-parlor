@@ -69,6 +69,18 @@ Pizza.prototype.pricing = function() {
   this.price = price;
 };
 
+let myOrder = new PizzaOrder();
+
+function displayMyPizzas(orderToDisplay) {
+  let pizzaList = $("ul#my-pizzas");
+  let htmlForPizzaInfo = "";
+  Object.keys(orderToDisplay.pizzas).forEach(function(key) {
+    const pizza = orderToDisplay.findPizza(key);
+    htmlForPizzaInfo += "<li id=" + pizza.id + ">My " + pizza.size + " " + pizza.crust + " pizza!</li>";
+  });
+  pizzaList.html(htmlForPizzaInfo);
+}
+
 $(document).ready(function() {
   $("form#new-pizza").submit(function(event) {
     event.preventDefault();
@@ -83,6 +95,9 @@ $(document).ready(function() {
 
     let myPizza = new Pizza(myToppings, mySize, mySauce, myStyle);
     myPizza.pricing();
+
+    myOrder.addPizza(myPizza);
+    displayMyPizzas(myOrder);
     
     $("#my-toppings").empty();
     $("#my-output").slideDown();
